@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>பரலோக மாதா ரைஸ் மில் - செல்வராஜ்</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600;800&family=Hind+Madurai:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2e7d32; /* Green */
+            --secondary: #fbc02d; /* Gold */
+            --bg: #fdfbf7;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Hind Madurai', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            padding-bottom: 80px;
+        }
+
+        /* --- Header Slider --- */
+        .header-slider {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 1s ease;
+        }
+
+        .slide-img { width: 100vw; height: 100%; object-fit: cover; }
+
+        .header-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 40px 20px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .shop-title {
+            font-family: 'Baloo Thambi 2', cursive;
+            font-size: 1.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* --- Time Status Card --- */
+        .status-card {
+            background: white;
+            width: 85%;
+            margin: -25px auto 20px;
+            position: relative;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--secondary);
+        }
+
+        .time-badge {
+            background: #e8f5e9;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* --- Owner Section (Updated) --- */
+        .owner-box {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            margin: 15px 20px;
+            padding: 10px;
+            border-radius: 50px; /* Pill Shape */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .owner-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+        }
+
+        .owner-info { margin-left: 15px; }
+        .owner-name {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Baloo Thambi 2', cursive;
+        }
+        .verified-icon { color: #2196f3; font-size: 0.9rem; margin-left: 5px; }
+
+        /* --- Price List --- */
+        .price-container { padding: 10px 20px; }
+        .price-row {
+            display: flex; justify-content: space-between;
+            padding: 15px; background: white;
+            margin-bottom: 10px; border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            align-items: center;
+        }
+        .price-icon { color: var(--primary); width: 30px; font-size: 1.2rem; }
+        .price-amt { font-weight: bold; color: #d32f2f; font-size: 1.1rem; }
+
+        /* --- Bottom Nav --- */
+        .bottom-nav {
+            position: fixed; bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            width: 90%; background: #222;
+            border-radius: 50px;
+            display: flex; justify-content: space-between;
+            padding: 5px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            color: white; text-decoration: none;
+            padding: 12px 20px; display: flex; align-items: center; gap: 8px;
+            border-radius: 40px; font-size: 0.9rem;
+        }
+        .call-btn { background: #4caf50; font-weight: bold; animation: pulse 2s infinite; }
+        .map-btn { background: transparent; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-slider">
+        <div class="slider-wrapper" id="slider">
+            <img src="1.jpeg" class="slide-img">
+            <img src="2.jpeg" class="slide-img">
+            <img src="3.jpeg" class="slide-img">
+        </div>
+        <div class="header-overlay">
+            <h1 class="shop-title">பரலோக மாதா ரைஸ் மில்</h1>
+            <p style="margin:5px 0 0; font-size:0.9rem; opacity:0.9;">தரமான சேவை | நியாயமான விலை</p>
+        </div>
+    </div>
+
+    <div class="status-card">
+        <div class="time-badge">⏰ நேரம்: காலை 9 - மாலை 4</div>
+        <div style="font-size:0.9rem; color:#555;">
+            ஞாயிறு விடுமுறை<br>
+            <b style="color:green;">இப்போது திறந்துள்ளது</b>
+        </div>
+    </div>
+
+    <div class="owner-box">
+        <img src="image.png" class="owner-img" alt="Selvaraj">
+        <div class="owner-info">
+            <h3 class="owner-name">திரு. செல்வராஜ் <i class="fas fa-check-circle verified-icon"></i></h3>
+            <p style="margin:0; font-size:0.85rem; color:#777;">உரிமையாளர்</p>
+        </div>
+    </div>
+
+    <div style="background:var(--secondary); color:black; padding:8px; font-weight:bold; margin:20px 0;">
+        <marquee behavior="scroll" direction="left">
+            🌾 பரலோக மாதா ரைஸ் மில் - உங்களை அன்புடன் வரவேற்கிறோம்! தொடர்புக்கு: 9789171373 🌾
+        </marquee>
+    </div>
+
+    <div class="price-container">
+        <h3 style="margin-bottom:15px; color:#2e7d32;">அரைக்கும் கூலி</h3>
+        
+        <div class="price-row">
+            <div><i class="fas fa-cow price-icon"></i> கால்நடைகளுக்கு</div>
+            <div class="price-amt">₹3.50</div>
+        </div>
+
+        <div class="price-row">
+            <div><i class="fas fa-home price-icon"></i> வீட்டிற்கு (நைஸ்)</div>
+            <div class="price-amt">₹10.00</div>
+        </div>
+
+        <div class="price-row">
+            <div><i class="fas fa-seedling price-icon"></i> உளுந்து உடைக்க</div>
+            <div class="price-amt">₹3.50</div>
+        </div>
+
+        <div class="price-row">
+            <div><i class="fas fa-mortar-pestle price-icon"></i> மசால் அரைக்க</div>
+            <div class="price-amt">₹30.00</div>
+        </div>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <div class="bottom-nav">
+        <a href="https://maps.app.goo.gl/uKBUbZuv8dNqKYss7" target="_blank" class="nav-btn map-btn">
+            <i class="fas fa-map-marker-alt"></i> லொகேஷன்
+        </a>
+        <a href="tel:9789171373" class="nav-btn call-btn">
+            <i class="fas fa-phone-alt"></i> அழைக்கவும்
+        </a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide-img');
+        const wrapper = document.getElementById('slider');
+
+        function showSlides() {
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            wrapper.style.transform = `translateX(-${slideIndex * 100}vw)`;
+        }
+        setInterval(showSlides, 3000);
+    </script>
+
+</body>
+</html>
