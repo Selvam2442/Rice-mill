@@ -23,11 +23,11 @@
             padding: 0;
             background-color: var(--bg);
             color: var(--text);
-            padding-bottom: 90px;
+            padding-bottom: 120px; /* Space for bottom nav */
             overflow-x: hidden;
         }
 
-        /* --- 1. Header Slider (Fixed Visibility) --- */
+        /* --- 1. Header Slider --- */
         .header-slider {
             position: relative;
             height: 280px;
@@ -35,7 +35,7 @@
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background: #000; /* Fallback color */
+            background: #000;
         }
 
         .slider-wrapper {
@@ -50,19 +50,17 @@
         .header-overlay {
             position: absolute;
             bottom: 0; left: 0; width: 100%;
-            /* Stronger Gradient for Visibility */
             background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0.6) 50%, transparent 100%);
             padding: 60px 20px 20px;
             color: white;
             text-align: center;
-            box-sizing: border-box; /* Fix padding issues */
+            box-sizing: border-box; 
         }
 
         .shop-title {
             font-family: 'Baloo Thambi 2', cursive;
             font-size: 2rem;
             margin: 0;
-            /* Strong Shadow */
             text-shadow: 3px 3px 6px #000000;
             letter-spacing: 0.5px;
             color: #fff;
@@ -95,7 +93,7 @@
             color: var(--primary);
             padding: 6px 15px;
             border-radius: 15px;
-            font-weight: 800; /* Bolder */
+            font-weight: 800;
             font-size: 0.95rem;
             display: inline-block;
             margin-bottom: 5px;
@@ -131,7 +129,56 @@
         }
         .verified-icon { color: #2196f3; font-size: 1rem; margin-left: 5px; }
 
-        /* --- 4. Price List --- */
+        /* --- 4. Payment Section --- */
+        .payment-card {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px dashed #1a73e8;
+        }
+        
+        .payment-title {
+            color: #1a73e8;
+            font-family: 'Baloo Thambi 2', cursive;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .pay-btn-main {
+            display: inline-block;
+            background: #1a73e8;
+            color: white !important;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+            animation: pulse-blue 2s infinite;
+            cursor: pointer;
+            border: none;
+            width: 80%;
+        }
+
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(26, 115, 232, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+        }
+
+        .payment-details {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* --- 5. Price List --- */
         .price-container { padding: 10px 20px; }
         .section-header { 
             color: var(--primary); 
@@ -148,13 +195,41 @@
             box-shadow: 0 3px 6px rgba(0,0,0,0.05);
             align-items: center;
             border-left: 5px solid var(--secondary);
-            color: #333; /* Force dark text */
+            color: #333; 
         }
 
         .price-icon { color: var(--primary); width: 30px; font-size: 1.2rem; }
         .price-amt { font-weight: 800; color: #d32f2f; font-size: 1.15rem; }
 
-        /* --- 5. Floating Bottom Nav (Fixed Colors) --- */
+        /* --- 6. Promo Section --- */
+        .promo-card {
+            background: #222;
+            color: white;
+            margin: 10px 20px 30px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .promo-card p {
+            margin: 0 0 10px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .promo-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: #000 !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        /* --- 7. Floating Bottom Nav --- */
         .bottom-nav {
             position: fixed; bottom: 20px; left: 50%;
             transform: translateX(-50%);
@@ -167,37 +242,35 @@
         }
 
         .nav-btn {
-            color: white !important; /* Force White Color */
+            color: white !important; 
             text-decoration: none;
             padding: 12px 20px; display: flex; align-items: center; gap: 8px;
             border-radius: 40px; font-size: 0.95rem;
             font-weight: 600;
         }
-        /* Ensure visited links don't change color */
-        .nav-btn:visited, .nav-btn:active { color: white !important; }
 
-        .call-btn { background: #4caf50; font-weight: bold; animation: pulse 2s infinite; }
+        .call-btn { background: #4caf50; font-weight: bold; animation: pulse-green 2s infinite; }
         .map-btn { background: transparent; }
 
-        @keyframes pulse {
+        @keyframes pulse-green {
             0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
             70% { box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
             100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
 
-        /* --- 6. POPUP MODAL --- */
+        /* --- 8. POPUP MODALS --- */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); /* Darker BG */
+            background: rgba(0, 0, 0, 0.85);
             display: none; justify-content: center; align-items: center;
             z-index: 2000; backdrop-filter: blur(5px);
         }
 
         .modal-box {
-            background: white; width: 80%; max-width: 320px;
+            background: white; width: 85%; max-width: 350px;
             padding: 30px 20px; border-radius: 25px;
             text-align: center; position: relative;
-            animation: popIn 0.5s ease;
+            animation: popIn 0.4s ease;
         }
 
         .modal-icon { font-size: 3.5rem; margin-bottom: 15px; }
@@ -209,6 +282,35 @@
             padding: 12px 30px; border-radius: 50px; font-size: 1rem;
             font-weight: bold; cursor: pointer; width: 100%;
             box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Payment App Options */
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .app-btn {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 15px 10px; border-radius: 15px; text-decoration: none;
+            color: white; font-weight: bold; font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .app-btn i { font-size: 2rem; margin-bottom: 8px; }
+        
+        .gpay-btn { background: #ea4335; }
+        .phonepe-btn { background: #5f259f; }
+        .paytm-btn { background: #00baf2; }
+        .other-btn { background: #333333; }
+
+        .close-pay-btn {
+            background: transparent; color: #666; border: none;
+            font-size: 1rem; text-decoration: underline; font-weight: bold;
+            cursor: pointer; margin-top: 10px;
         }
 
         @keyframes popIn {
@@ -233,10 +335,10 @@
     </div>
 
     <div class="status-card">
-        <div class="time-badge"><i class="far fa-clock"></i> நேரம்: காலை 9 - மாலை 4</div>
+        <div class="time-badge"><i class="far fa-clock"></i> நேரம்: காலை 8 - இரவு 8</div>
         <div style="font-size:0.95rem; color:#444; line-height:1.5; font-weight: 600;">
             ஞாயிறு விடுமுறை<br>
-            <span id="statusText" style="font-weight:800; font-size:1rem;">Loading...</span>
+            <span id="statusText" style="font-weight:800; font-size:1rem;">லோடிங்...</span>
         </div>
     </div>
 
@@ -246,6 +348,19 @@
             <h3 class="owner-name">திரு. செல்வராஜ் <i class="fas fa-check-circle verified-icon"></i></h3>
             <p style="margin:0; font-size:0.9rem; color:#666; font-weight:600;">உரிமையாளர்</p>
         </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-card">
+        <h3 class="payment-title"><i class="fas fa-qrcode"></i> ஆன்லைனில் பணம் செலுத்த</h3>
+        <p style="font-size: 0.95rem; color: #444; margin-bottom: 5px;">கீழே உள்ள பட்டனை அழுத்தி நீங்கள் விரும்பும் செயலி மூலம் பாதுகாப்பாக பணம் செலுத்தலாம்.</p>
+        
+        <button onclick="openPaymentSelector()" class="pay-btn-main">
+            <i class="fas fa-wallet"></i> பணம் செலுத்துக (Pay)
+        </button>
+        
+        <p class="payment-details">UPI ID: selvarajt017-1@okaxis</p>
+        <p class="payment-details"><i class="fas fa-phone-alt" style="font-size: 0.8rem;"></i> எண்: 9789171373</p>
     </div>
 
     <div style="background:var(--secondary); color:#000; padding:10px; font-weight:bold; margin:20px 0; border-top:2px solid #f9a825; border-bottom:2px solid #f9a825;">
@@ -278,6 +393,14 @@
         </div>
     </div>
 
+    <!-- Promo Section -->
+    <div class="promo-card">
+        <p>இதே போல் உங்களுக்கும் அல்லது உங்கள் கடைக்கும் வெப்சைட் உருவாக்க வேண்டுமா?</p>
+        <a href="https://selvam2442.github.io/Personal-details/" target="_blank" class="promo-btn">
+            <i class="fas fa-globe"></i> இங்கே கிளிக் செய்யவும்
+        </a>
+    </div>
+
     <div class="bottom-nav">
         <a href="https://maps.app.goo.gl/uKBUbZuv8dNqKYss7" target="_blank" class="nav-btn map-btn">
             <i class="fas fa-map-marker-alt"></i> லொகேஷன்
@@ -287,12 +410,45 @@
         </a>
     </div>
 
+    <!-- Shop Status Modal -->
     <div id="statusModal" class="modal-overlay">
         <div class="modal-box">
             <div id="modalIcon" class="modal-icon"></div>
             <h2 id="modalTitle" class="modal-title"></h2>
             <p id="modalMsg" class="modal-msg"></p>
-            <button class="modal-btn" onclick="closeModal()">சரிங்க (OK)</button>
+            <button class="modal-btn" onclick="closeStatusModal()">சரிங்க (OK)</button>
+        </div>
+    </div>
+
+    <!-- Payment App Selector Modal -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-box" style="padding-top: 20px;">
+            <h2 class="modal-title" style="font-size: 1.3rem;">எந்த ஆப் மூலம் செலுத்த விரும்புகிறீர்கள்?</h2>
+            <p class="modal-msg" style="margin-bottom: 5px;">கீழே உள்ளவற்றில் ஒன்றை தேர்ந்தெடுக்கவும்</p>
+            
+            <div class="app-grid">
+                <!-- GPay Android Intent -->
+                <a href="intent://pay?pa=selvarajt017-1@okaxis&pn=Selvaraj&cu=INR#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end" class="app-btn gpay-btn" onclick="closePaymentModal()">
+                    <i class="fab fa-google-pay"></i> GPay
+                </a>
+                
+                <!-- PhonePe Android Intent -->
+                <a href="intent://pay?pa=selvarajt017-1@okaxis&pn=Selvaraj&cu=INR#Intent;scheme=upi;package=com.phonepe.app;end" class="app-btn phonepe-btn" onclick="closePaymentModal()">
+                    <i class="fas fa-rupee-sign" style="font-family: Arial; font-weight: bold; font-style: normal;">पे</i> PhonePe
+                </a>
+                
+                <!-- Paytm Android Intent -->
+                <a href="intent://pay?pa=selvarajt017-1@okaxis&pn=Selvaraj&cu=INR#Intent;scheme=upi;package=net.one97.paytm;end" class="app-btn paytm-btn" onclick="closePaymentModal()">
+                    <i class="fas fa-wallet"></i> Paytm
+                </a>
+                
+                <!-- Standard generic fallback for iOS/others -->
+                <a href="upi://pay?pa=selvarajt017-1@okaxis&pn=Selvaraj&cu=INR" class="app-btn other-btn" onclick="closePaymentModal()">
+                    <i class="fas fa-university"></i> Other App
+                </a>
+            </div>
+
+            <button class="close-pay-btn" onclick="closePaymentModal()">வேண்டாம், மூடவும் (Close)</button>
         </div>
     </div>
 
@@ -303,6 +459,7 @@
         const wrapper = document.getElementById('slider');
 
         function showSlides() {
+            if (slides.length === 0) return;
             slideIndex++;
             if (slideIndex >= slides.length) { slideIndex = 0; }
             wrapper.style.transform = `translateX(-${slideIndex * 100}vw)`;
@@ -313,6 +470,7 @@
         function checkShopStatus() {
             const now = new Date();
             const currentHour = now.getHours(); 
+            const currentDay = now.getDay(); // 0 is Sunday
             
             const modal = document.getElementById('statusModal');
             const mIcon = document.getElementById('modalIcon');
@@ -320,8 +478,8 @@
             const mMsg = document.getElementById('modalMsg');
             const statusText = document.getElementById('statusText');
 
-            // Time: 9 AM to 4 PM (16:00)
-            const isOpen = currentHour >= 9 && currentHour < 16;
+            // Time: 8 AM to 8 PM (20:00), excluding Sunday (0)
+            const isOpen = currentHour >= 8 && currentHour < 20 && currentDay !== 0;
 
             modal.style.display = 'flex'; 
 
@@ -333,19 +491,36 @@
                 mMsg.innerText = "கடை திறந்துள்ளது. மெஷின் ஓடுகிறது. நீங்கள் இப்போது வரலாம்!";
                 
                 statusText.innerHTML = '<span style="color:#2e7d32">● திறந்துள்ளது (கரண்ட் உள்ளது)</span>';
+            } else if (currentDay === 0) {
+                // SUNDAY CLOSED
+                mIcon.innerHTML = '<i class="fas fa-calendar-times" style="color:#d32f2f;"></i>';
+                mTitle.innerText = "இன்று விடுமுறை 🚫";
+                mTitle.style.color = "#d32f2f";
+                mMsg.innerText = "இன்று ஞாயிற்றுக்கிழமை என்பதால் கடை விடுமுறை. நாளை வரவும்.";
+                
+                statusText.innerHTML = '<span style="color:#d32f2f">● இன்று விடுமுறை</span>';
             } else {
                 // CLOSED
                 mIcon.innerHTML = '<i class="fas fa-moon" style="color:#d32f2f;"></i>';
-                mTitle.innerText = "கடை லீவு / மூடியுள்ளது 🚫";
+                mTitle.innerText = "கடை மூடியுள்ளது 🚫";
                 mTitle.style.color = "#d32f2f";
-                mMsg.innerText = "மன்னிக்கவும்! நேரம் முடிந்தது. காலை 9 மணி முதல் மாலை 4 மணி வரை வரவும்.";
+                mMsg.innerText = "மன்னிக்கவும்! நேரம் முடிந்தது. காலை 8 மணி முதல் இரவு 8 மணி வரை வரவும்.";
                 
                 statusText.innerHTML = '<span style="color:#d32f2f">● மூடியுள்ளது</span>';
             }
         }
 
-        function closeModal() {
+        function closeStatusModal() {
             document.getElementById('statusModal').style.display = 'none';
+        }
+
+        // --- C. PAYMENT APP SELECTOR LOGIC ---
+        function openPaymentSelector() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
         }
 
         window.onload = checkShopStatus;
@@ -353,3 +528,5 @@
 
 </body>
 </html>
+
+
