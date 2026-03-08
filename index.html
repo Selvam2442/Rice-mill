@@ -337,7 +337,7 @@
     <div class="status-card">
         <div class="time-badge"><i class="far fa-clock"></i> நேரம்: காலை 8 - இரவு 8</div>
         <div style="font-size:0.95rem; color:#444; line-height:1.5; font-weight: 600;">
-            ஞாயிறு விடுமுறை<br>
+            தினமும் திறந்திருக்கும்<br>
             <span id="statusText" style="font-weight:800; font-size:1rem;">லோடிங்...</span>
         </div>
     </div>
@@ -470,7 +470,6 @@
         function checkShopStatus() {
             const now = new Date();
             const currentHour = now.getHours(); 
-            const currentDay = now.getDay(); // 0 is Sunday
             
             const modal = document.getElementById('statusModal');
             const mIcon = document.getElementById('modalIcon');
@@ -478,8 +477,8 @@
             const mMsg = document.getElementById('modalMsg');
             const statusText = document.getElementById('statusText');
 
-            // Time: 8 AM to 8 PM (20:00), excluding Sunday (0)
-            const isOpen = currentHour >= 8 && currentHour < 20 && currentDay !== 0;
+            // Time: 8 AM to 8 PM (20:00), every day
+            const isOpen = currentHour >= 8 && currentHour < 20;
 
             modal.style.display = 'flex'; 
 
@@ -491,14 +490,6 @@
                 mMsg.innerText = "கடை திறந்துள்ளது. மெஷின் ஓடுகிறது. நீங்கள் இப்போது வரலாம்!";
                 
                 statusText.innerHTML = '<span style="color:#2e7d32">● திறந்துள்ளது (கரண்ட் உள்ளது)</span>';
-            } else if (currentDay === 0) {
-                // SUNDAY CLOSED
-                mIcon.innerHTML = '<i class="fas fa-calendar-times" style="color:#d32f2f;"></i>';
-                mTitle.innerText = "இன்று விடுமுறை 🚫";
-                mTitle.style.color = "#d32f2f";
-                mMsg.innerText = "இன்று ஞாயிற்றுக்கிழமை என்பதால் கடை விடுமுறை. நாளை வரவும்.";
-                
-                statusText.innerHTML = '<span style="color:#d32f2f">● இன்று விடுமுறை</span>';
             } else {
                 // CLOSED
                 mIcon.innerHTML = '<i class="fas fa-moon" style="color:#d32f2f;"></i>';
